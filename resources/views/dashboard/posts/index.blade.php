@@ -51,7 +51,7 @@
                     data-action="{{ route('post.destroy', 0) }}">
                     @method('DELETE')
                     @csrf
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Eliminar publicacion</button>
                 </form>
             </div>
         </div>

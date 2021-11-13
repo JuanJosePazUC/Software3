@@ -15,10 +15,8 @@
     </select>
 </div>
 <div class="form-group">
-    <select class="form-control" name="state_publication" id="state_publication">
-        <option value="">Publicado</option>
-        <option value="">No publicado</option>
-        <option value="">En revision</option>
+    <select class="custom-select" name="state_publication" id="state_publication">
+        @include('dashboard.components.state_options', ['val' => $post->state_publication])
     </select>
 </div>
 <div class="form-group">
@@ -28,6 +26,6 @@
     </textarea>
 </div>
 <div>
-    <button type="submit" class="btn btn-success">Aceptar</button>
-    <a class="btn btn-danger" href="{{ URL::previous() }}">Cancelar</a>
+    <button type="submit" class="btn btn-success btn-sm">Aceptar</button>
+    <a class="btn btn-danger btn-sm" href="{{ URL::previous() }}">Cancelar</a>
 </div>

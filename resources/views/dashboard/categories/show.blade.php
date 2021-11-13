@@ -1,16 +1,16 @@
 @extends('dashboard.master')
 @section('content')
     <div class="form-group">
-        <input readonly class="form-control" type="text" name="category" id="category"
+        <input readonly class="form-control" type="text" name="category_name" id="category_name"
             placeholder="Categoria" value="{{ $category->category_name }}">
     </div>
     <div class="form-group">
-        <textarea readonly class="form-control" name="content_category" id="content_category" cols="30" rows="10"
-            placeholder="Contenido de la publicacion">
+        <textarea readonly class="form-control" name="content_publication" id="content_publication" cols="30" rows="10"
+            placeholder="Descripcion">
                 {{ $category->content_category }}
             </textarea>
     </div>
     <div>
-        <button class="btn btn-danger btn-sm" href="{{ URL::previous() }}">Aceptar</button>
+        <a class="btn btn-danger btn-sm" href="{{ URL::previous() }}">Aceptar</a>
     </div>
 @endsection

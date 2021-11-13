@@ -18,6 +18,6 @@
             </textarea>
     </div>
     <div>
-        <a class="btn btn-danger" href="{{ URL::previous() }}">Aceptar</a>
+        <a class="btn btn-danger btn-sm" href="{{ URL::previous() }}">Aceptar</a>
     </div>
 @endsection

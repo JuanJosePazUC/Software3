@@ -1,11 +1,10 @@
 @extends('dashboard.master')
 @section('content')
-<a href="{{route('category.create')}}" class="btn btn-info btn-sm mb3">Crear categoria</a>
+<a href="{{route('category.create')}}" class="btn btn-info btn-sm mb3">Crear publicacion</a>
     <h6>Listar categorias</h6>
     <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>Código</th>
                 <th>Categoria</th>
                 <th>Descripcion</th>
                 <th>Opciones</th>
@@ -14,10 +13,8 @@
         <tbody>
             @foreach ($categories as $category)
                 <tr>
-                    <td scope="row">{{ $category->id }}</td>
-                    <td>{{ $category->publication }}</td>
+                    <td scope="row">{{ $category->category_name }}</td>
                     <td>{{ $category->content_publication }}</td>
-                    <td>{{ $category->state_publication }}</td>
                     <td>
                         <a href="{{ route('category.edit', $category->id) }}" class="btn btn-info btn-sm">Editar</a>
                         <a href="{{ route('category.show', $category->id) }}" class="btn btn-info btn-sm">Ver</a>
@@ -42,7 +39,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                ¿Seguro deseas eliminar la publicación?
+                ¿Seguro deseas eliminar la categoria?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -50,7 +47,7 @@
                     data-action="{{ route('category.destroy', 0) }}">
                     @method('DELETE')
                     @csrf
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="submit" class="btn btn-primary">Eliminar categoria</button>
                 </form>
             </div>
         </div>
@@ -65,7 +62,7 @@
             action = $('#deleteCategory').attr('data-action').slice(0, -1)
             action += id
             console.log(action)
-            $('#deletecategory').attr('action', action)
+            $('#deleteCategory').attr('action', action)
             var modal = $(this)
             modal.find('.modal-title').text('Vas a eliminar la categoria: ' + id)
         })
