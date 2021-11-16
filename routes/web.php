@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use PHPUnit\TextUI\XmlConfiguration\Group;
@@ -23,3 +24,7 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('post', PostController::class);
     Route::resource('category', CategoryController::class);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

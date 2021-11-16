@@ -25,7 +25,7 @@ class CategoryStore extends FormRequest
     {
         return [
             'category_name' => 'required|min:3|max:50',
-            'content_publication' => 'required|min:3|max:50'
+            'content_publication' => 'required|min:3|max:500'
         ];
     }
 }
